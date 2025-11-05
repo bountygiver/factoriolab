@@ -190,44 +190,6 @@ describe('SettingsService', () => {
         },
       ]);
     });
-
-    it('should handle DSP minimum module rank', () => {
-      spyOn(service, 'mod').and.returnValue(
-        spread(Mocks.mod, { game: Game.DysonSphereProgram }),
-      );
-      spyOn(service, 'preset').and.returnValue(Preset.Minimum);
-      const result = service.defaults();
-      assert(result != null);
-      expect(result.moduleRankIds).toEqual([]);
-    });
-
-    it('should handle DSP maximum module rank', () => {
-      spyOn(service, 'mod').and.returnValue(
-        spread(Mocks.mod, { game: Game.DysonSphereProgram }),
-      );
-      const result = service.defaults();
-      assert(result != null);
-      expect(result.moduleRankIds).toEqual(Mocks.mod.defaults!.moduleRank!);
-    });
-
-    it('should handle Satisfactory module rank', () => {
-      spyOn(service, 'mod').and.returnValue(
-        spread(Mocks.mod, { game: Game.Satisfactory }),
-      );
-      const result = service.defaults();
-      assert(result != null);
-      expect(result.moduleRankIds).toEqual(Mocks.defaults.moduleRankIds);
-      expect(result.overclock).toEqual(rational(100n));
-    });
-
-    it('should handle Final Factory module rank', () => {
-      spyOn(service, 'mod').and.returnValue(
-        spread(Mocks.mod, { game: Game.FinalFactory }),
-      );
-      const result = service.defaults();
-      assert(result != null);
-      expect(result.moduleRankIds).toEqual(Mocks.defaults.moduleRankIds);
-    });
     it('should handle custom presets', () => {
       spyOn(service, 'mod').and.returnValue(
         spread(Mocks.mod, {
@@ -378,7 +340,7 @@ describe('SettingsService', () => {
                 : i,
       );
       spyOn(service, 'mod').and.returnValue(
-        spread(Mocks.mod, { flags: 'spa', items }),
+        spread(Mocks.mod, { flags: 'pain', items }),
       );
       spyOn(service, 'i18n').and.returnValue(Mocks.modI18n);
       const result = service.dataset();
@@ -414,7 +376,7 @@ describe('SettingsService', () => {
           : i,
       );
       spyOn(service, 'mod').and.returnValue(
-        spread(Mocks.mod, { items, flags: 'spa' }),
+        spread(Mocks.mod, { items, flags: 'pain' }),
       );
       const result = service.dataset();
       expect(result.prodUpgradeTechs).toEqual([ItemId.ArtilleryShellRange]);
@@ -451,7 +413,7 @@ describe('SettingsService', () => {
 
     it('should calculate legendary quality level', () => {
       const data = Mocks.getDataset();
-      data.flags = flags.spa;
+      data.flags = flags.pain;
       data.technologyEntities[ItemId.LegendaryQuality] = {};
       spyOn(service, 'dataset').and.returnValue(data);
       spyOn(service, 'state').and.returnValue(
@@ -464,7 +426,7 @@ describe('SettingsService', () => {
 
     it('should calculate epic quality level', () => {
       const data = Mocks.getDataset();
-      data.flags = flags.spa;
+      data.flags = flags.pain;
       data.technologyEntities[ItemId.EpicQuality] = {};
       spyOn(service, 'dataset').and.returnValue(data);
       spyOn(service, 'state').and.returnValue(
@@ -477,7 +439,7 @@ describe('SettingsService', () => {
 
     it('should calculate rare quality level', () => {
       const data = Mocks.getDataset();
-      data.flags = flags.spa;
+      data.flags = flags.pain;
       data.technologyEntities[ItemId.QualityModuleTechnology] = {};
       spyOn(service, 'dataset').and.returnValue(data);
       spyOn(service, 'state').and.returnValue(
@@ -490,7 +452,7 @@ describe('SettingsService', () => {
 
     it('should filter items based on unlocked recipes', () => {
       const data = Mocks.getDataset();
-      data.flags = flags.spa;
+      data.flags = flags.pain;
       const qId = ItemId.Coal + '(1)';
       data.itemIds.push(qId);
       data.noRecipeItemIds.add(qId);

@@ -421,19 +421,6 @@ export class SettingsService extends Store<SettingsState> {
         }
         break;
       }
-      case Game.DysonSphereProgram: {
-        moduleRank = preset === Preset.Beacon8 ? m.moduleRank : undefined;
-        break;
-      }
-      case Game.Satisfactory: {
-        moduleRank = m.moduleRank;
-        overclock = rational(100n);
-        break;
-      }
-      case Game.FinalFactory: {
-        moduleRank = m.moduleRank;
-        break;
-      }
     }
 
     const machineRankIds =

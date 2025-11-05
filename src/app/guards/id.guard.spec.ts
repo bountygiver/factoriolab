@@ -47,16 +47,6 @@ describe('canActivateId', () => {
 
   it('should migrate old game shortcuts', async () => {
     const rth = await RouterTestingHarness.create('/factorio');
-    expect(router.url).toEqual('/spa');
-    await rth.navigateByUrl('/final-factory');
-    expect(router.url).toEqual('/ffy');
-    await rth.navigateByUrl('/foundry');
-    expect(router.url).toEqual('/fdy');
-    await rth.navigateByUrl('/outworld-station');
-    expect(router.url).toEqual('/ows');
-    await rth.navigateByUrl('/satisfactory');
-    expect(router.url).toEqual('/sfy');
-    await rth.navigateByUrl('/techtonica');
-    expect(router.url).toEqual('/tta');
+    expect(router.url).toEqual('/pain');
   });
 });

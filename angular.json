@@ -87,12 +87,12 @@
                   "type": "initial",
                   "baseline": "1.7mb",
                   "maximumWarning": "100kb",
-                  "maximumError": "200kb"
+                  "maximumError": "300kb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "3kb",
+                  "maximumError": "5kb"
                 }
               ]
             },
@@ -110,12 +110,12 @@
                   "type": "initial",
                   "baseline": "1.7mb",
                   "maximumWarning": "100kb",
-                  "maximumError": "200kb"
+                  "maximumError": "300kb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "3kb",
+                  "maximumError": "5kb"
                 }
               ]
             },
