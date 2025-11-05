@@ -9,8 +9,8 @@ export interface AppData {
 
 export const data: AppData = {
   mods: [
-    { id: 'spa', name: 'Space Age', game: Game.Factorio, flags: 'spa' },
     { id: 'pain', name: 'Randomizer - Pain', game: Game.Factorio, flags: 'spa' },
+    { id: 'spa', name: 'Space Age', game: Game.Factorio, flags: 'spa' },
     { id: '2.0', name: '2.0', game: Game.Factorio, flags: '2.0' },
     { id: '2.0q', name: '2.0 + Quality', game: Game.Factorio, flags: '2.0q' },
     { id: '1.1', name: '1.1', game: Game.Factorio, flags: '1.1' },
